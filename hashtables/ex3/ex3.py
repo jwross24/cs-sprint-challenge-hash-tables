@@ -2,7 +2,19 @@ def intersection(arrays):
     """
     YOUR CODE HERE
     """
-    # Your code here
+    counts = {}
+    result = []
+
+    for array in arrays:
+        for item in array:
+            if item in counts:
+                counts[item] += 1
+            else:
+                counts[item] = 1
+
+    for k, v in counts.items():
+        if v == len(arrays):
+            result.append(k)
 
     return result
 

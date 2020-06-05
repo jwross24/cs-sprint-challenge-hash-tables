@@ -2,7 +2,15 @@ def has_negatives(a):
     """
     YOUR CODE HERE
     """
-    # Your code here
+    counts = {}
+    result = []
+
+    for num in a:
+        if abs(num) not in counts:
+            counts[abs(num)] = num
+        else:
+            if counts[abs(num)] + num == 0:
+                result.append(abs(num))
 
     return result
 
